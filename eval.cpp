@@ -627,21 +627,21 @@ namespace Sass {
       case Textual::NUMBER:
         result = new (ctx.mem) Number(t->path(),
                                       t->position(),
-                                      atof(num.c_str()),
+                                      Util::sass_atof(num.c_str()),
                                       "",
                                       zero);
         break;
       case Textual::PERCENTAGE:
         result = new (ctx.mem) Number(t->path(),
                                       t->position(),
-                                      atof(num.c_str()),
+                                      Util::sass_atof(num.c_str()),
                                       "%",
                                       zero);
         break;
       case Textual::DIMENSION:
         result = new (ctx.mem) Number(t->path(),
                                       t->position(),
-                                      atof(num.c_str()),
+                                      Util::sass_atof(num.c_str()),
                                       Token(number(text.c_str())),
                                       zero);
         break;

@@ -1,9 +1,20 @@
 #include "util.hpp"
 
 namespace Sass {
+
   namespace Util {
     using std::string;
 
+    /* Locale unspecific atof function. */
+    double sass_atof(const char *str)
+    {
+      char* locale = setlocale(LC_NUMERIC, NULL);
+      setlocale(LC_NUMERIC, "C");
+      double val = atof(str);
+      setlocale(LC_NUMERIC, locale);
+      return val;
+    }
+    
     string normalize_underscores(const string& str) {
       string normalized = str;
       for(size_t i = 0, L = normalized.length(); i < L; ++i) {

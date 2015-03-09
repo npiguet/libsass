@@ -9,6 +9,8 @@
 namespace Sass {
   namespace Util {
 
+    double sass_atof(const char* str);
+  
     std::string normalize_underscores(const std::string& str);
     std::string normalize_decimals(const std::string& str);
     std::string normalize_sixtuplet(const std::string& col);
